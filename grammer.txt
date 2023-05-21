@@ -1,0 +1,9 @@
+last : (prg;)* prg ";";
+prg : typeInit | assign ;
+typeInit : ("type int" ident ("," ident)* ";");
+assign : (ident "=") expr ;
+expr : term (("+" | "-")term)* ;
+term : factor (("*" | "/")factor)* ;
+factor : ident | number | "(" expr ")"; 
+ident : ([a-zAZ])+ ; 
+number : ([0-9])+ ;
